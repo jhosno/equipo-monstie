@@ -8,9 +8,8 @@ function App() {
 
   return (
     <div className="App container">
-      <Header></Header>
-      <h2>sdas</h2>
-      holis
+      <Header/>
+
     </div>
   )
 }
