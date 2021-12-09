@@ -1,12 +1,26 @@
-import React from "react";
+import React, {useState} from "react";
 
 const Form = () => {
+    const [nick, setnick] = useState("")
+    const [breed, setbreed] = useState("")
+    const [rarity, setrarity] = useState("")
+    const [trends, settrends] = useState("")
+
+    //handleSubmit recibe la variable e/event que es el resultado del form
+    const handleSubmit= (e) =>{
+        //para evitar que la página se recargué al anviar el form
+        e.preventDefault()
+        
+    }
   return (
     <div className="md:w-1/2 lg:w-2/5 mb-5">
       <h2 className="text-green-700 font-bold text-center text-xl  p-5">
         Agrega tu nuevo monstie
       </h2>
-      <form className="bg-gray-50 p-8 m-5 ml-10 rounded-2xl">
+      <form className="bg-gray-50 p-8 m-5 ml-10 rounded-2xl"
+      //sin parentesis porque entonces llamas directamente la función y  se va a ejecutar automáticamente a cada rato 
+      onSubmit={handleSubmit}
+      >
         <div className="my-6">
           <label
             htmlFor="nick"
@@ -18,6 +32,7 @@ const Form = () => {
             type="text"
             name="nick"
             id="nick"
+            onChange={(e) => setnick(e.target.value)}
             className="w-full  p-2 border-2 rounded-lg"
           />
         </div>
@@ -39,6 +54,8 @@ const Form = () => {
             type="text"
             name="breed"
             id="breed"
+            onChange={(e) => setbreed(e.target.value)}
+
             className="w-full  p-2 border-2 rounded-lg"
           />
         </div>
@@ -51,8 +68,12 @@ const Form = () => {
           </label>
           <input
             type="number"
+            min="1"
+            max = "9"
             name="rarity"
             id="rarity"
+            onChange={(e) => setrarity(e.target.value)}
+
             className="w-full  p-2 border-2 rounded-lg"
           />
         </div>
@@ -66,6 +87,8 @@ const Form = () => {
           <select
             name="trend"
             id="trend"
+            onChange={(e) => settrends(e.target.value)}
+
             className="w-full  p-2 border-2 rounded-lg"
           >
             <option value="">Selecciona una opción</option>
