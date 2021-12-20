@@ -10,7 +10,16 @@ const Form = () => {
     const handleSubmit= (e) =>{
         //para evitar que la página se recargué al anviar el form
         e.preventDefault()
-        
+
+        //ahora preguntamos sí los campos están vacíos
+        //Para eso usamos las variables de useState que representan cada uno de los inputs
+        if([nick, breed, rarity, trends].includes('')){
+            //los metemos en un array y con la function includes, preguntamos si hay alhuna variable vacía
+            console.log('debes rellenar todos los campos')
+            //Ahora que ya validamos debemos mostrarle al usuario que faltana campos
+        }else{
+            console.log('perfect!')
+        }
     }
   return (
     <div className="md:w-1/2 lg:w-2/5 mb-5">
