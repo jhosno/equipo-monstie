@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Errors from "./Errors";
 
 
-const Form = () => {
+const Form = ({monsties, setmonsties}) => {
     const [nick, setnick] = useState("")
     const [breed, setbreed] = useState("")
     const [rarity, setrarity] = useState("")
@@ -11,19 +11,29 @@ const Form = () => {
 
     //handleSubmit recibe la variable e/event que es el resultado del form
     const handleSubmit= (e) =>{
-        //para evitar que la página se recargué al anviar el form
-        e.preventDefault()
-
+      //para evitar que la página se recargué al anviar el form
+      e.preventDefault()
+      
+      const addMonstie = {
+        nick,
+        breed,
+        rarity,
+        trends
+      }
         //ahora preguntamos sí los campos están vacíos
         //Para eso usamos las variables de useState que representan cada uno de los inputs
         if([nick, breed, rarity, trends].includes('')){
             //los metemos en un array y con la function includes, preguntamos si hay alhuna variable vacía
-            console.log('Debes rellenar todos los campos')
+            
             //Ahora que ya validamos debemos mostrarle al usuario que faltana campos
             seterror(true)
+            return
         }else{
             console.log('perfect!')
             seterror(false)
+            //Agregamos el nuevo objeto con los valores del monstie
+            setmonsties([...monsties, addMonstie])
+
         }
     }
   return (

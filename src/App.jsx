@@ -7,11 +7,16 @@ import Header from './components/Header';
 
 function App() {
   const [count, setCount] = useState(0)
+  const [monsties, setmonsties] = useState([])
 
   return (
     <div className="App container h-screen">
       <Header/>
-      <Form/>
+      <Form
+        monsties = {monsties}
+        setmonsties = {setmonsties}
+      />
+      
 
     </div>
   )
