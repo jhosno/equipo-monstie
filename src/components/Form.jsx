@@ -1,10 +1,13 @@
 import React, {useState} from "react";
+import Errors from "./Errors";
+
 
 const Form = () => {
     const [nick, setnick] = useState("")
     const [breed, setbreed] = useState("")
     const [rarity, setrarity] = useState("")
     const [trends, settrends] = useState("")
+    const [error, seterror] = useState(false)
 
     //handleSubmit recibe la variable e/event que es el resultado del form
     const handleSubmit= (e) =>{
@@ -15,10 +18,12 @@ const Form = () => {
         //Para eso usamos las variables de useState que representan cada uno de los inputs
         if([nick, breed, rarity, trends].includes('')){
             //los metemos en un array y con la function includes, preguntamos si hay alhuna variable vacía
-            console.log('debes rellenar todos los campos')
+            console.log('Debes rellenar todos los campos')
             //Ahora que ya validamos debemos mostrarle al usuario que faltana campos
+            seterror(true)
         }else{
             console.log('perfect!')
+            seterror(false)
         }
     }
   return (
@@ -106,6 +111,7 @@ const Form = () => {
             <option value="technique">Técnico</option>
           </select>
         </div>
+        {error ? <Errors message="You must be fill all inputs" /> : null}
         <div className="flex justify-items-end">
           <input
             className="bg-green-900 rounded-md shadow-3xl border-3 border-white text-green-300 py-2 px-4 font-semibold uppercase 
