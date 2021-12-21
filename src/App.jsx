@@ -3,6 +3,8 @@ import "tailwindcss/tailwind.css";
 import './App.css';
 import Form from './components/Form';
 import Header from './components/Header';
+import List from './components/List';
+
 
 
 function App() {
@@ -12,11 +14,15 @@ function App() {
   return (
     <div className="App container h-screen">
       <Header/>
-      <Form
-        monsties = {monsties}
-        setmonsties = {setmonsties}
-      />
-      
+      <div className="flex mt-12  xs:flex-col  md:flex-row">
+        <Form
+          monsties = {monsties}
+          setmonsties = {setmonsties}
+        />
+        <List
+          monsties = {monsties}
+        />
+      </div>
 
     </div>
   )
