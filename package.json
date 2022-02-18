@@ -1,20 +1,24 @@
 {
-  "name": "sysst",
-  "version": "0.0.0",
+  "homepage": "https://jhosno.github.io/MHST-monster",
+  "name": "MHST-monster",
+  "version": "0.1.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^1.0.7",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.4",
+    "@vitejs/plugin-react": "^1.2.0",
+    "autoprefixer": "^10.4.2",
+    "gh-pages": "^3.2.3",
+    "postcss": "^8.4.6",
     "tailwindcss": "^2.2.19",
-    "vite": "^2.7.0"
+    "vite": "^2.8.0"
   }
 }
