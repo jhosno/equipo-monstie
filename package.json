@@ -1,6 +1,6 @@
 {
-  "homepage": "https://jhosno.github.io/MHST-monster",
-  "name": "MHST-monster",
+  "homepage": "https://jhosno.github.io/equipo-monstie",
+  "name": "equipo-monstie",
   "version": "0.1.0",
   "scripts": {
     "dev": "vite",

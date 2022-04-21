@@ -7,7 +7,7 @@ import List from './components/List';
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  
   const [monsties, setmonsties] = useState([])
   const [monstie, setmonstie] = useState({})
 
