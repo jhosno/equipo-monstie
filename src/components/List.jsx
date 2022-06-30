@@ -7,7 +7,7 @@ function List({ monsties, setmonstie, deleteMonstie }) {
       <h2 className="text-green-700 font-bold text-center text-xl  p-5">
         Monsties
       </h2>
-      {monsties.length !== 0 ? (
+      {monsties.length >   0 ? (
         <div>
           {monsties.map((monstie) => (
             <Card
